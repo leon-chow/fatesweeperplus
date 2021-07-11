@@ -1,7 +1,11 @@
 import React from 'react';
 
-export default function Tile(index) {
+import './tile.css';
+
+export default function Tile(props, key) {
+    console.log(props);
+    console.log(key);
     return (
-        <div> Tile </div>
+        <div className="tile" key={key}> {props.index} </div>
     )
 }

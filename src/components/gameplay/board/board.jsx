@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Tile from '../tile/tile';
+import './board.css'
 
 export default class Board extends React.Component {
     constructor() {
@@ -9,20 +10,33 @@ export default class Board extends React.Component {
         this.state = {};
     }
 
-    render() {
-        /*let tileComponents = [];
-        let numOfTiles = 100;
-        for (let i = 0; i < numOfTiles; i++) {
-            tileComponents.push(<Tile index={i}/>)
+    createBoard() {
+        let tileComponents = [];
+        const rows = 10;
+        const cols = 10;
+        for (let i = 0; i < rows; i++) {
+            tileComponents.push([]);
+            for (let j = 0; j < cols; j++) {
+                tileComponents[i].push(<Tile index={i * 10 + j}/>)
+            }
         }
-        return (
-            <div>
-                { tileComponents }     
-            </div> */
+        return tileComponents;
+    }
+
+    render() {
+        const tileComponents = this.createBoard();
         return (
             <div className="board">
-                <Tile/>
-            </div>
-        );
+                { tileComponents.map((row) => {
+                    return (
+                        <div className="row">
+                            {row.map((tile) => {
+                                return <div> {tile} </div>;
+                            })}
+                        </div>
+                    );
+                })}     
+            </div> 
+        )
     }
 }
