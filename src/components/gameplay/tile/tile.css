@@ -6,4 +6,9 @@
     align-items: center;
     align-self:baseline;
     justify-content: center;
+    background-color: gray;
+}
+
+.revealed {
+    background-color: white;
 }

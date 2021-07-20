@@ -2,8 +2,8 @@ import React from 'react';
 
 import './tile.css';
 
-export default function Tile(props, key) {
+export default function Tile(props) {
     return (
-        <div className="tile" key={key}> {props.index} </div>
-    )
+        <div onClick={() => props.tileClicked(props.row, props.col)} className={props.revealed === true ? 'tile revealed' : 'tile'}> {props.index} </div>
+    );
 }
