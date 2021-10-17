@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Board from './components/gameplay/board/board';
-import Header from './components/header';
+import Header from './components/shared/header';
 
 function App() {
   return (
