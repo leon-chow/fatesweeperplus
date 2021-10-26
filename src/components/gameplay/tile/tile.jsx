@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import './tile.css';
+import "./tile.css";
 
 export const Tile = (props) => {
-    return (
-        <div onClick={() => props.tileClicked(props.row, props.col)} className={props.revealed === true ? 'tile revealed' : 'tile'}> {props.index} </div>
-    );
-}
+  const revealed = props.revealed ? "revealed" : "";
+  const hasMine = props.hasMine ? "mine" : "";
+  const classes = `tile ${revealed} ${hasMine}`;
+  return (
+    <div
+      onClick={() => props.tileClicked(props.row, props.col)}
+      className={classes}
+    ></div>
+  );
+};
 
 export default Tile;
