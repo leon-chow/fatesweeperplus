@@ -2,11 +2,8 @@ import React, { useState } from "react";
 
 import Tile from "../tile/tile";
 import "./board.css";
-import {
-  generateMines,
-  createBoard,
-  tileClicked,
-} from "../utilities/utilities";
+import { generateMines, createBoard } from "../utilities/board/board-utilities";
+import { tileClicked } from "../utilities/game/game-utilities";
 
 const Board = () => {
   const rows = 10;

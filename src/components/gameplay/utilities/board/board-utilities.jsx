@@ -32,15 +32,3 @@ export const generateMines = (rows, cols) => {
   }
   return mineLocations;
 };
-
-export const tileClicked = (board, setBoard, row, col) => {
-  if (board[row][col].hasMine) {
-    window.location.reload();
-  }
-  const newBoard = board.slice();
-  newBoard[row][col].revealed = true;
-  setBoard(newBoard);
-};
-
-// TODO: Add function
-export const checkAdjacentTiles = (board, setBoard, row, col) => {};
